@@ -1,0 +1,67 @@
+---
+import Layout from '../components/layout.astro';
+---
+
+<style>
+.steps {
+  background: var(--light);
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: min(90vw, 250px);
+  justify-content: center;
+  margin-top: 3rem;
+  padding: 5rem 5vw;
+  width: 100vw;
+}
+
+@media (min-width: 550px) {
+  .steps {
+    grid-template-columns: repeat(2, min(calc(50% - 1rem), 250px));
+  }
+}
+
+@media (min-width: 1050px) {
+  .steps {
+    grid-template-columns: repeat(4, min(calc(25% - 1.5rem), 250px));
+  }
+}
+
+.step {
+  background: var(--white);
+  border: 1px solid var(--lightBorder);
+  border-radius: var(--card-radius);
+  display: flex;
+  flex-direction: column;
+  font-size: 0.75rem;
+  padding: 1rem 1.5rem 1.5rem;
+  text-align: left;
+  box-shadow: 0 2px 4px rgb(14 30 37 / 12%);
+}
+
+.stepHeading {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+
+</style>
+
+<Layout
+  title="DIGITALISIM Connect"
+  description="En tant que Diginaute, tu as accès à une galaxie d'outils pour t'aider au quotidien"
+  home
+>
+  <main class="steps">
+    <section class="step">
+      <h2 class="stepHeading">Comptes HubSpot</h2>
+      <p>
+        Accéder à tous les comptes HubSpot
+        <strong>connectés à l'application Connect.</strong>
+      </p>
+      <a href="/accounts" class="button">
+        Voir mes comptes <span class="sr-only">about Deploy Previews</span>
+      </a>
+    </section>
+  </main>
+</Layout>
